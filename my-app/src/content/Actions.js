@@ -12,7 +12,6 @@ function Actions(prop) {
     return (
         <div className="actions">
             <input type="text"/>
-
             <select onChange={handleFilter}>
                 <option value="All">Filter by Region</option>
                 <option value="Africa">Africa</option>
