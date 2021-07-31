@@ -1,3 +1,6 @@
+import {BiChevronDown} from 'react-icons/bi';
+import {AiOutlineSearch} from 'react-icons/ai';
+
 function Actions(prop) {
 
     const handleFilter = () => { 
@@ -26,15 +29,28 @@ function Actions(prop) {
 
     return (
         <div className="actions">
-            <input type="text" id="searchInput" onInput={handleFilter}/>
-            <select id="filterDDL" onChange={handleFilter}>
-                <option value="All">Filter by Region</option>
-                <option value="Africa">Africa</option>
-                <option value="Americas">Americas</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
+            <div className="search">
+                <div className="inputHolder">
+                    <AiOutlineSearch class="searchIcon" />
+                    <input type="text" id="searchInput" placeholder="Search for a country..." onInput={handleFilter}/>
+                </div>
+
+            </div>
+            <div className="regionFilter">
+                <div className="inputHolder">
+                    <select id="filterDDL" onChange={handleFilter}>
+                        <option value="All">Filter by Region</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Americas">Americas</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                    <BiChevronDown className="ddlIcon"/>
+                </div>
+
+            </div>
+
         </div>
     ) 
 }

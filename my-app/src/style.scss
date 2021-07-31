@@ -13,6 +13,7 @@ html,body {
     margin: 0;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
+    color: $Light-Text
   }
 
 .container {
@@ -32,6 +33,16 @@ html,body {
         flex-grow: 1;
         font-size: 18px;
     }
+    
+    .modeToggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
 }
 
 .content {
@@ -40,29 +51,59 @@ html,body {
     padding: 0 150px;
 }
 
-.darkMode {
-    color: $Light-Elements;
 
-    .content {
-        background: $Dark-bg;
-    }
-
-    .countryContainer .country, .header {
-        background: $Dark-Elements;
-        box-shadow: none;
-    }
-}
 
 .actions {
+    display: flex;
     padding: 50px 0;
 
+    .search {
+        flex-grow: 1;
+    }
+        .inputHolder {
+            position: relative;
+            display: inline-block; 
+            background: $Light-Elements;
+            box-shadow: 0px 0px 9px 0px #BDBDBD;
+            border-radius: 5px;
+
+            .ddlIcon, .searchIcon {
+                position: absolute;
+                font-size: 18px;
+                color: $Light-Input;
+            }
+
+            .ddlIcon {
+                top: 17px;
+                right: 15px;
+
+            }
+
+            .searchIcon {
+                top: 15px;
+                left: 20px;
+            }
+        }
+
     input, select {
-        background: $Light-Elements;
+        height: 50px; 
+        box-sizing: border-box;
+        color: $Light-Input;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 15px;
+        font-weight: 300;
+        -webkit-appearance: none;
     }
 
     input[type="text"] {
         width: 500px;
-        padding: 10px;
+        margin-left: 40px;
+    }
+
+    select {
+        padding-right: 65px;
     }
 }
 
@@ -82,7 +123,7 @@ html,body {
         overflow: hidden;
         background: $Light-Elements;
         margin-bottom: 50px;
-        box-shadow: 0px 0px 9px 0px #F9F9F9;
+        box-shadow: 0px 0px 9px 0px #BDBDBD;
 
         img {
             width: 100%;
@@ -91,7 +132,47 @@ html,body {
 
         .info {
             padding: 15px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .countryName {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        p {
+            padding: 0;
+            margin: 0 0 3px;
         }
     }
 }
 
+
+
+
+.darkMode {
+    color: $Light-Elements;
+
+    .content {
+        background: $Dark-bg;
+    }
+
+    .countryContainer .country, .header {
+        background: $Dark-Elements;
+        box-shadow: none;
+    }
+
+    .actions
+    {
+         .inputHolder {
+            background: $Dark-Elements;
+            box-shadow: none;
+        }
+
+        select, input {
+            color: rgb(255, 255, 255);
+        }
+    }
+}

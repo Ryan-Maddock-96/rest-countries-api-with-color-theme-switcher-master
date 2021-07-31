@@ -3,10 +3,10 @@ function Country(prop) {
         <div className="country">
             <img src={prop.flag}/>
             <div className="info">
-                <div>{prop.name}</div>
-                <div><b>Population:</b> {prop.population}</div>
-                <div><b>Region:</b> {prop.region}</div>
-                <div><b>Capital:</b> {prop.capital}</div>
+                <div className="countryName">{prop.name}</div>
+                <p><b>Population:</b> {prop.population}</p>
+                <p><b>Region:</b> {prop.region}</p>
+                <p><b>Capital:</b> {prop.capital}</p>
             </div>
 
         </div>

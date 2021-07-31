@@ -19,7 +19,7 @@ function HeaderEl() {
     return(
         <div className="header">
             <div className="logo">Where in the World?</div>
-            <div onClick={updateMode}>{modeIcon} {mode} Mode</div>
+            <div className="modeToggle" onClick={updateMode}>{modeIcon} {mode} Mode</div>
         </div>
     )
 }

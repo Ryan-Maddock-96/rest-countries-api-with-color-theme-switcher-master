@@ -2,7 +2,7 @@
 import {useEffect, useState} from "react";
 import HeaderEl from './content/Header';
 import Actions from './content/Actions';
-import Country from "./content/country";
+import Country from "./content/Country";
 function App() {
 
   const [allData, getData] = useState([]);
