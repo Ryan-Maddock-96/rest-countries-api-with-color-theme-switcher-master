@@ -7,6 +7,7 @@ function App() {
 
   const [allData, getData] = useState([]);
   const [filteredData, getFilteredData] = useState(allData);
+  
 
   useEffect(() => {
     fetchData();
@@ -24,7 +25,7 @@ function App() {
     <div className="container">
       <HeaderEl />
       <div className="content">
-        <Actions allData={allData} getFilteredData={getFilteredData} />
+        <Actions allData={allData} getFilteredData={getFilteredData} filteredData={filteredData}/>
         <div className="countryContainer">
           {
           filteredData.length > 0 ? filteredData.map(item => <Country flag={item.flag} name={item.name} population={item.population} region={item.region} capital={item.capital}/>) : <div>No results found</div>
